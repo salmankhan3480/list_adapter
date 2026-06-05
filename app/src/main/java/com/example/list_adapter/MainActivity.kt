@@ -1,19 +1,17 @@
 package com.example.list_adapter
 
 import User
-import android.content.Context
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ListView
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.cos
 
 class MainActivity : AppCompatActivity() {
     lateinit var arrayList: ArrayList<User>
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,6 +33,21 @@ class MainActivity : AppCompatActivity() {
         listview.adapter = myadapter(this,arrayList)
 
 
+        listview.setOnItemClickListener { parent, view, position, id ->
+            val username =Name[position]
+            val userimage = image[position]
+            val userlastmasge= lastmsge[position]
+
+       val intent = Intent(this, userActivity::class.java)
+            intent.putExtra("name",username)
+            intent.putExtra("image",userimage)
+            intent.putExtra("lastmassge",userlastmasge)
+
+startActivity(intent)
+        }
+
     }
+
+
     }
 
