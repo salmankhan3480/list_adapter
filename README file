@@ -1,0 +1,18 @@
+# Android ListAdapter & Data Passing Demo
+
+A clean, modern Android application built in Kotlin that demonstrates how to efficiently display dynamic lists using `ListAdapter` and safely pass complex data between screens.
+
+## 🛠️ Project Components
+
+This repository serves as a blueprint for implementing structural UI list patterns in Android:
+
+* **Data Class:** Represents the structured data model for the list items.
+* **ListAdapter & DiffUtil:** Implements an optimized `ListAdapter` that utilizes `DiffUtil.ItemCallback` to calculate list changes automatically, enabling smooth animations and high performance.
+* **Custom Adapter & ViewHolder:** Binds the layout files dynamically to the list data.
+* **Screen-to-Screen Data Transfer:** Demonstrates how to handle clicks on list items and use an `Intent` with `putExtra` to send data smoothly from the list screen to a detail screen.
+
+## 🚀 How It Works
+
+1. **The List:** Items are loaded into a `RecyclerView` managed by the custom `ListAdapter`.
+2. **The Interaction:** Clicking an individual item triggers an item-click listener.
+3. **The Navigation:** The app bundles the item's data inside an `Intent` and starts the secondary detail activity.
